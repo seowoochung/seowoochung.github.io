@@ -15,11 +15,11 @@ function gestureStart() {
     }
   }
 }
-function toggleAbstract(abstractId) {
-  var abstract = document.getElementById(abstractId);
-  if (abstract.style.display === "none") {
-    abstract.style.display = "block";
+function toggleAbstract(element) {
+  var abstractSpan = element.nextElementSibling;
+  if (abstractSpan.style.display === "none" || abstractSpan.style.display === "") {
+    abstractSpan.style.display = "inline";
   } else {
-    abstract.style.display = "none";
+    abstractSpan.style.display = "none";
   }
 }
