@@ -17,9 +17,12 @@ function gestureStart() {
 }
 function toggleAbstract(element) {
   var abstractSpan = element.nextElementSibling;
-  if (abstractSpan.style.display === "none" || abstractSpan.style.display === "") {
-    abstractSpan.style.display = "inline";
+  var abstractId = "abstract" + Array.from(element.closest('p').parentNode.children).indexOf(element.closest('p')) + 1;
+  var abstract = document.getElementById(abstractId);
+  
+  if (abstract.style.display === "none" || abstract.style.display === "") {
+    abstract.style.display = "block";
   } else {
-    abstractSpan.style.display = "none";
+    abstract.style.display = "none";
   }
 }
