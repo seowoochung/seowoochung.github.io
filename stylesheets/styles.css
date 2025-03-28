@@ -1,3 +1,16 @@
+.abstract {
+  display: none;
+  border-left: 3px #595959; /* Vertical line on the left */
+  padding-left: 10px; /* Space between text and line */
+  margin-left: 10px; /* Shift text slightly right */
+}
+
+.toggle-link {
+  cursor: pointer;
+  color: #39c;
+  text-decoration: none;
+}
+
 body {
   background-color: #fff;
   padding:50px;
