@@ -16,7 +16,7 @@ function gestureStart() {
   }
 }
 function toggleAbstract(abstractId) {
-  var abstract = document.getElementById("abstract" + abstractId);
+  var abstract = document.getElementById(abstractId);
   
   // Toggle the display of the abstract
   if (abstract.style.display === "none" || abstract.style.display === "") {
