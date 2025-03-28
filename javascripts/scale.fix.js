@@ -15,11 +15,10 @@ function gestureStart() {
     }
   }
 }
-function toggleAbstract(element) {
-  var abstractSpan = element.nextElementSibling;
-  var abstractId = "abstract" + Array.from(element.closest('p').parentNode.children).indexOf(element.closest('p')) + 1;
-  var abstract = document.getElementById(abstractId);
+function toggleAbstract(abstractId) {
+  var abstract = document.getElementById("abstract" + abstractId);
   
+  // Toggle the display of the abstract
   if (abstract.style.display === "none" || abstract.style.display === "") {
     abstract.style.display = "block";
   } else {
