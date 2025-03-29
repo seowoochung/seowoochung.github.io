@@ -1,6 +1,6 @@
 .abstract {
   display: none;
-  border-left: 3px #595959; /* Vertical line on the left */
+  border-left: 3px solid #595959; /* Vertical line on the left */
   padding-left: 10px; /* Space between text and line */
   margin-left: 10px; /* Shift text slightly right */
 }
