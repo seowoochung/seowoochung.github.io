@@ -11,6 +11,16 @@
   text-decoration: none;
 }
 
+.paper-title {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.paper-title:hover {
+  color: #39c;
+}
+
 body {
   background-color: #fff;
   padding:50px;
