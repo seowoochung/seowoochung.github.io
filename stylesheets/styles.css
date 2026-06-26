@@ -300,8 +300,8 @@ a.paper-title:active {
 
 .paper-list > li {
   position: relative;
-  margin-bottom: 1.5em;   /* exactly one normal-font-size space */
-  padding-left: 2em;
+  margin-bottom: 1.5em;
+  padding-left: 2.5em;
 }
 
 .paper-list > li:last-child {
@@ -309,7 +309,7 @@ a.paper-title:active {
 }
 
 .paper-list > li::before {
-  content: "[" counter(list-item) "]";
+  content: "[" attr(data-num) "]";
   position: absolute;
   left: 0;
   color: #222;
