@@ -11,16 +11,6 @@
   text-decoration: none;
 }
 
-.paper-title {
-  color: inherit;
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-.paper-title:hover {
-  color: #39c;
-}
-
 body {
   background-color: #fff;
   padding:50px;
@@ -290,4 +280,14 @@ footer {
     font-size:12pt;
     color:#444;
   }
+}
+
+a.paper-title,
+a.paper-title:link,
+a.paper-title:visited,
+a.paper-title:hover,
+a.paper-title:active {
+  color: #000 !important;
+  font-weight: 500 !important;
+  text-decoration: underline !important;
 }
