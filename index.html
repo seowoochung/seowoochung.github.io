@@ -15,6 +15,15 @@
   <![endif]-->
 </head>
 
+<script>
+  document.querySelectorAll(".paper-list").forEach(function (list) {
+    var items = list.children;
+    for (var i = 0; i < items.length; i++) {
+      items[i].setAttribute("data-num", items.length - i);
+    }
+  });
+</script>
+  
 <body>
   <div class="wrapper">
     <header>
@@ -52,7 +61,7 @@
 
       <h2>Publications</h2>
 
-      <ol class="paper-list" reversed>
+      <ol class="paper-list">
         <li>
           <a class="paper-title" 
              href="https://academic.oup.com/isq/article/doi/10.1093/isq/sqag038/8711177?utm_source=authortollfreelink&utm_campaign=isq&utm_medium=email&guestAccessKey=cd3f7e98-21da-4177-a8ce-4ce4b3916912" 
@@ -81,7 +90,7 @@
       
       <h2>Working Papers</h2>
 
-      <ol class="paper-list" reversed>
+      <ol class="paper-list">
         <li>
           <strong>The Decline of Multilateralism and Foreign Lobbying: Evidence from the WTO Appellate Body Crisis</strong><br>
           Seowoo Chung<br>
@@ -151,7 +160,7 @@
       
       <h2>Works in Progress</h2>
 
-      <ol class="paper-list" reversed>
+      <ol class="paper-list">
         <li>
           <strong>Detection without Enforcement: Artificial Intelligence and the Limits of Global Governance.</strong><br>
           Carnegie, Allison, Seowoo Chung, and Lisa Fan. 
