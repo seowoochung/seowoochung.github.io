@@ -14,15 +14,6 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 </head>
-
-<script>
-  document.querySelectorAll(".paper-list").forEach(function (list) {
-    var items = list.children;
-    for (var i = 0; i < items.length; i++) {
-      items[i].setAttribute("data-num", items.length - i);
-    }
-  });
-</script>
   
 <body>
   <div class="wrapper">
@@ -202,6 +193,17 @@
       }
     }
   </script>
+
+  <script>
+    document.querySelectorAll(".paper-list").forEach(function (list) {
+      var items = list.children;
+      for (var i = 0; i < items.length; i++) {
+        items[i].setAttribute("data-num", items.length - i);
+      }
+    });
+  </script>
+
+  
 </body>
 
 </html>
