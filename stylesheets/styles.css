@@ -291,3 +291,18 @@ a.paper-title:active {
   font-weight: 500 !important;
   text-decoration: underline !important;
 }
+
+.paper-list {
+  padding-left: 2.5em;
+  margin: 0 0 20px;
+}
+
+.paper-list > li {
+  margin: 0 0 20px;
+}
+
+.paper-list > li::marker {
+  content: "[" counter(list-item) "] ";
+  color: #222;
+  font-weight: 500;
+}
