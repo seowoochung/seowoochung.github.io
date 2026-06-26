@@ -300,8 +300,8 @@ a.paper-title:active {
 
 .paper-list > li {
   position: relative;
-  margin-bottom: 32px;   /* more space between entries */
-  padding-left: 2.7em;   /* space for [1], [2], etc. */
+  margin-bottom: 1.5px;   /* more space between entries */
+  padding-left: 2em;   /* space for [1], [2], etc. */
 }
 
 .paper-list > li::before {
@@ -309,5 +309,4 @@ a.paper-title:active {
   position: absolute;
   left: 0;
   color: #222;
-  font-weight: 500;
 }
