@@ -9,14 +9,22 @@
 
   <link rel="stylesheet" href="stylesheets/styles.css">
   <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+  <link rel="stylesheet" href="stylesheets/nav.css">
   <meta name="viewport" content="width=device-width">
   <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 </head>
-  
+
 <body>
   <div class="wrapper">
+
+    <nav class="site-nav">
+      <a href="#research" id="nav-research" class="active">Research</a>
+      <a href="#teaching" id="nav-teaching">Teaching</a>
+      <a href="cv/chung_cv_jul26.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+    </nav>
+
     <header>
       <img src="./img/profile26.jpg" style="width:240px;margin-bottom:10px;" />
       <h1>Seowoo Chung</h1>
@@ -34,7 +42,8 @@
       </p>
     </header>
 
-    <section>
+    <!-- ============ RESEARCH (landing view) ============ -->
+    <section id="research-section" class="page-section">
       <p>
         Welcome! I am a Ph.D. candidate in the Department of Political Science at Columbia University, specializing in international political economy and international institutions. 
         My research studies the politics of global governance under strain, focusing on how governments, firms, and IOs navigate the erosion of multilateral rules, enforcement, and legitimacy.
@@ -50,7 +59,7 @@
         You can view my CV (updated July 2026) <a target="_blank" rel="noopener noreferrer" href="cv/chung_cv_jul26.pdf">here</a>.        
       </p>
 
-      <h2>Publications</h2>
+      <h2 id="publications">Publications</h2>
 
       <ol class="paper-list">
         <li>
@@ -67,7 +76,7 @@
           <p id="abstract1" class="abstract">
             International organizations promote cooperation by diffusing information among states and the public. 
             But how does this information reach the public under authoritarian regimes? I examine how an authoritarian government 
-            with a censorship apparatus can use government-controlled media to offset international organizations’ 
+            with a censorship apparatus can use government-controlled media to offset international organizations&rsquo; 
             information effects. The authoritarian government selectively censors IO news based on the likelihood of success 
             in invoking a defensive reaction, suppressing complaints made by neutral counterparts that may lead to concerns for 
             noncompliance while allowing limited attention toward provocative complaints by hostile states. I find support for 
@@ -121,7 +130,7 @@
             To test this argument, we analyze novel text data from IMF working papers, tracking the breadth of topics 
             covered by Fund researchers over time. We then assess whether shifts in IMF funding align with these trends. 
             Our findings show that the IMF moderately expanded its purview in the 21st century, incorporating gender 
-            issues and climate change into its work, but significantly narrowed its focus during the 2007–2009 global 
+            issues and climate change into its work, but significantly narrowed its focus during the 2007&ndash;2009 global 
             financial crisis. These results carry important implications for claims of IO overreach and offer insights 
             regarding the legitimacy and adaptability of global governance.
           </p>
@@ -170,6 +179,43 @@
       <br>
     </section>
 
+    <!-- ============ TEACHING ============ -->
+    <section id="teaching-section" class="page-section" style="display:none;">
+      <h2>Teaching</h2>
+
+      <ul class="teaching-list">
+        <li>
+          <strong>Teaching Assistant, Business and Politics in the Globalized World (Undergraduate)</strong>: Spring 2025, Spring 2026<br>
+          Calvin Thrall
+        </li>
+
+        <li>
+          <strong>Teaching Assistant, International Political Economy (Undergraduate)</strong>: Fall 2025<br>
+          Davit Sahakyan
+          <a class="eval-link" href="teaching/POLSGU4866_002_2025_3-INT'LPOLITICALECONOMY-DISCPOLSG4866_002_2025_3_227245_SeowooChung.pdf" target="_blank" rel="noopener noreferrer">[evaluations]</a>
+        </li>
+
+        <li>
+          <strong>Teaching Assistant, Research Design: Data Analysis (Undergraduate)</strong>: Fall 2024<br>
+          Vincent Dorie
+        </li>
+        
+        <li>
+          <strong>Teaching Assistant, Autocracy and Democracy (Undergraduate)</strong>: Spring 2024<br>
+          Timothy Frye
+        </li>
+        
+        <li>
+          <strong>Teaching Assistant, Mathematics and Statistics for Political Science (Graduate)</strong><br>
+          Benjamin Goodrich
+          <a class="eval-link" href="teaching/POLSGU4701_001_2023_3-MATH&STATSFORPOLISCI-DISCPOLSW4701_001_2023_3_180781_SeowooChung.pdf" target="_blank" rel="noopener noreferrer">[evaluations]</a>
+        </li>
+
+      </ul>
+
+      <br>
+    </section>
+
     <footer>
       <p>
         <small>
@@ -202,7 +248,69 @@
     });
   </script>
 
-  
+  <script>
+    (function () {
+      var sections = {
+        research: document.getElementById("research-section"),
+        teaching: document.getElementById("teaching-section")
+      };
+      var navLinks = {
+        research: document.getElementById("nav-research"),
+        teaching: document.getElementById("nav-teaching")
+      };
+
+      function showSection(name) {
+        for (var key in sections) {
+          sections[key].style.display = (key === name) ? "" : "none";
+          navLinks[key].classList.toggle("active", key === name);
+        }
+      }
+
+      // Apply the view for the current hash.
+      // scrollToPubs = true when the user actively clicked "Research"
+      function applyHash(scrollToPubs) {
+        var hash = window.location.hash;
+        if (hash === "#teaching") {
+          showSection("teaching");
+          window.scrollTo(0, 0);
+        } else {
+          showSection("research");
+          if (scrollToPubs) {
+            var pubs = document.getElementById("publications");
+            if (pubs) pubs.scrollIntoView({ behavior: "smooth" });
+          }
+        }
+      }
+
+      // Clicking "Research" scrolls down to the Publications heading,
+      // even if #research is already the active hash.
+      navLinks.research.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (window.location.hash !== "#research") {
+          history.pushState(null, "", "#research");
+        }
+        applyHash(true);
+      });
+
+      navLinks.teaching.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (window.location.hash !== "#teaching") {
+          history.pushState(null, "", "#teaching");
+        }
+        applyHash(false);
+      });
+
+      // Handle back/forward buttons and hand-typed hashes.
+      window.addEventListener("popstate", function () {
+        applyHash(window.location.hash === "#research");
+      });
+
+      // Initial load: research view at the top by default;
+      // respect #teaching or #research if arriving via a saved link.
+      applyHash(window.location.hash === "#research");
+    })();
+  </script>
+
 </body>
 
 </html>
