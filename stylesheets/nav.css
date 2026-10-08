@@ -29,11 +29,6 @@
 
 /* ===== Paper entries ===== */
 
-/* Space between items */
-.paper-list li {
-  margin-bottom: 20px;
-}
-
 /* Linked titles: hyperlink blue, not bold or underlined */
 .paper-list .paper-title {
   font-weight: normal;
