@@ -282,16 +282,6 @@ footer {
   }
 }
 
-a.paper-title,
-a.paper-title:link,
-a.paper-title:visited,
-a.paper-title:hover,
-a.paper-title:active {
-  color: #000 !important;
-  font-weight: 500 !important;
-  text-decoration: underline !important;
-}
-
 .paper-list {
   list-style: none;
   padding-left: 0;
