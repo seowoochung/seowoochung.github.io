@@ -1,4 +1,4 @@
-/* Top-right site navigation (Research / Teaching / CV) */
+/* ===== Top-right site navigation (Research / Teaching / CV) ===== */
 
 .site-nav {
   text-align: right;
@@ -27,7 +27,42 @@
   border-bottom-color: #39c;
 }
 
-/* Teaching section list */
+/* ===== Paper entries ===== */
+
+/* Space between items */
+.paper-list li {
+  margin-bottom: 20px;
+}
+
+/* Linked titles: hyperlink blue, not bold or underlined */
+.paper-list .paper-title {
+  font-weight: normal;
+  text-decoration: none;
+  color: #39c;
+}
+
+.paper-list .paper-title:hover {
+  color: #069;
+  text-decoration: underline;
+}
+
+/* Titles with no PDF link */
+.paper-list .paper-title-plain {
+  font-weight: normal;
+}
+
+/* Second line: journal / status */
+.paper-list .paper-venue {
+  display: block;
+}
+
+/* Third line: abstract toggle, plain text */
+.toggle-link {
+  display: block;
+  cursor: pointer;
+}
+
+/* ===== Teaching section ===== */
 
 .teaching-note {
   font-size: 12px;
@@ -52,8 +87,8 @@
   text-decoration: none;
 }
 
-/* On narrow screens (the minimal theme stacks columns below 720px),
-   center the nav so it doesn't hug the edge awkwardly. */
+/* ===== Narrow screens ===== */
+
 @media print, screen and (max-width: 720px) {
   .site-nav {
     text-align: center;
